@@ -35,7 +35,9 @@ namespace Assignment6
         private void btnShowAll_Click(object sender, EventArgs e)
         {
             rtxtShowAll.Text = $"PLAYER\t\t\t\tJERSEY #\t\tGOALS{Environment.NewLine}";
-            foreach (var player in players.Where(p => p != null).OrderBy(x => x.Name))
+
+            Array.Sort(players);
+            foreach (var player in players)
             {
                 if (player != null)
                 {

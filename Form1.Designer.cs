@@ -28,81 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtPlayerName = new TextBox();
-            txtJerseryNo = new TextBox();
-            txtGoals = new TextBox();
-            btnAdd = new Button();
-            rtxtShowAll = new RichTextBox();
-            btnShowAll = new Button();
-            SuspendLayout();
+            this.txtPlayerName = new System.Windows.Forms.TextBox();
+            this.txtJerseryNo = new System.Windows.Forms.TextBox();
+            this.txtGoals = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.rtxtShowAll = new System.Windows.Forms.RichTextBox();
+            this.btnShowAll = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // txtPlayerName
             // 
-            txtPlayerName.Location = new Point(12, 12);
-            txtPlayerName.Name = "txtPlayerName";
-            txtPlayerName.PlaceholderText = "Player Name";
-            txtPlayerName.Size = new Size(204, 23);
-            txtPlayerName.TabIndex = 0;
+            this.txtPlayerName.Location = new System.Drawing.Point(12, 12);
+            this.txtPlayerName.Name = "txtPlayerName";
+            this.txtPlayerName.PlaceholderText = "Player Name";
+            this.txtPlayerName.Size = new System.Drawing.Size(204, 23);
+            this.txtPlayerName.TabIndex = 1;
             // 
             // txtJerseryNo
             // 
-            txtJerseryNo.Location = new Point(222, 12);
-            txtJerseryNo.Name = "txtJerseryNo";
-            txtJerseryNo.PlaceholderText = "Jersey #";
-            txtJerseryNo.Size = new Size(100, 23);
-            txtJerseryNo.TabIndex = 1;
+            this.txtJerseryNo.Location = new System.Drawing.Point(222, 12);
+            this.txtJerseryNo.Name = "txtJerseryNo";
+            this.txtJerseryNo.PlaceholderText = "Jersey #";
+            this.txtJerseryNo.Size = new System.Drawing.Size(100, 23);
+            this.txtJerseryNo.TabIndex = 2;
             // 
             // txtGoals
             // 
-            txtGoals.Location = new Point(328, 12);
-            txtGoals.Name = "txtGoals";
-            txtGoals.PlaceholderText = "Goals";
-            txtGoals.Size = new Size(100, 23);
-            txtGoals.TabIndex = 2;
+            this.txtGoals.Location = new System.Drawing.Point(328, 12);
+            this.txtGoals.Name = "txtGoals";
+            this.txtGoals.PlaceholderText = "Goals";
+            this.txtGoals.Size = new System.Drawing.Size(100, 23);
+            this.txtGoals.TabIndex = 3;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(434, 12);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 23);
-            btnAdd.TabIndex = 3;
-            btnAdd.Text = "Add Player";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
+            this.btnAdd.Location = new System.Drawing.Point(434, 12);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add Player";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // rtxtShowAll
             // 
-            rtxtShowAll.Location = new Point(12, 107);
-            rtxtShowAll.Name = "rtxtShowAll";
-            rtxtShowAll.Size = new Size(497, 257);
-            rtxtShowAll.TabIndex = 4;
-            rtxtShowAll.Text = "";
+            this.rtxtShowAll.Location = new System.Drawing.Point(12, 107);
+            this.rtxtShowAll.Name = "rtxtShowAll";
+            this.rtxtShowAll.ReadOnly = true;
+            this.rtxtShowAll.Size = new System.Drawing.Size(497, 257);
+            this.rtxtShowAll.TabIndex = 0;
+            this.rtxtShowAll.Text = "";
             // 
             // btnShowAll
             // 
-            btnShowAll.Location = new Point(12, 78);
-            btnShowAll.Name = "btnShowAll";
-            btnShowAll.Size = new Size(132, 23);
-            btnShowAll.TabIndex = 5;
-            btnShowAll.Text = "Show All Players";
-            btnShowAll.UseVisualStyleBackColor = true;
-            btnShowAll.Click += btnShowAll_Click;
+            this.btnShowAll.Location = new System.Drawing.Point(12, 78);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(132, 23);
+            this.btnShowAll.TabIndex = 5;
+            this.btnShowAll.Text = "Show All Players";
+            this.btnShowAll.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(520, 376);
-            Controls.Add(btnShowAll);
-            Controls.Add(rtxtShowAll);
-            Controls.Add(btnAdd);
-            Controls.Add(txtGoals);
-            Controls.Add(txtJerseryNo);
-            Controls.Add(txtPlayerName);
-            Name = "Form1";
-            Text = "Form1";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(520, 376);
+            this.Controls.Add(this.btnShowAll);
+            this.Controls.Add(this.rtxtShowAll);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtGoals);
+            this.Controls.Add(this.txtJerseryNo);
+            this.Controls.Add(this.txtPlayerName);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
