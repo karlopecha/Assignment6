@@ -34,17 +34,31 @@ namespace Assignment6
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
-            rtxtShowAll.Text = string.Empty;
+            rtxtShowAll.Text = $"{"PLAYER",-40}{"JERSEY #",8}{"GOALS",6}{Environment.NewLine}";
 
             Array.Sort(players);
             foreach (var player in players)
             {
                 if (player != null)
                 {
-                    //rtxtShowAll.Text += $"{player.Name}\t\t\t\t{player.JerseyNumber}\t\t{player.GoalsScored}{Environment.NewLine}";
-                    rtxtShowAll.Text += $"{player.Name, -40}{player.JerseyNumber, 5}{player.GoalsScored, 5}{Environment.NewLine}";
+                    rtxtShowAll.Text += $"{player.Name, -40}{player.JerseyNumber, 8}{player.GoalsScored, 6}{Environment.NewLine}";
                 }
             }
+        }
+
+        private void rbtnName_CheckedChanged(object sender, EventArgs e)
+        {
+            HockeyPlayer.SortBy = "A";
+        }
+
+        private void rbtnJersey_CheckedChanged(object sender, EventArgs e)
+        {
+            HockeyPlayer.SortBy = "J";
+        }
+
+        private void rbtnGoal_CheckedChanged(object sender, EventArgs e)
+        {
+            HockeyPlayer.SortBy = "G";
         }
     }
 }
