@@ -34,14 +34,15 @@ namespace Assignment6
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
-            rtxtShowAll.Text = $"PLAYER\t\t\t\tJERSEY #\t\tGOALS{Environment.NewLine}";
+            rtxtShowAll.Text = string.Empty;
 
             Array.Sort(players);
             foreach (var player in players)
             {
                 if (player != null)
                 {
-                    rtxtShowAll.Text += $"{player.Name}\t\t\t\t{player.JerseyNumber}\t\t{player.GoalsScored}{Environment.NewLine}";
+                    //rtxtShowAll.Text += $"{player.Name}\t\t\t\t{player.JerseyNumber}\t\t{player.GoalsScored}{Environment.NewLine}";
+                    rtxtShowAll.Text += $"{player.Name, -40}{player.JerseyNumber, 5}{player.GoalsScored, 5}{Environment.NewLine}";
                 }
             }
         }

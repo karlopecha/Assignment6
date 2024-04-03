@@ -68,9 +68,11 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add Player";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // rtxtShowAll
             // 
+            this.rtxtShowAll.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtxtShowAll.Location = new System.Drawing.Point(12, 107);
             this.rtxtShowAll.Name = "rtxtShowAll";
             this.rtxtShowAll.ReadOnly = true;
@@ -86,6 +88,7 @@
             this.btnShowAll.TabIndex = 5;
             this.btnShowAll.Text = "Show All Players";
             this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // Form1
             // 
