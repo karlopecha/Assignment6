@@ -1,5 +1,6 @@
 ﻿namespace Assignment6
 {
+    [Serializable]
     public class HockeyPlayer : IComparable<HockeyPlayer>
     {
         public static string SortBy { get; set; }

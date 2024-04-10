@@ -1,4 +1,5 @@
 using System.Numerics;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Assignment6
 {
@@ -9,9 +10,6 @@ namespace Assignment6
         public Form1()
         {
             InitializeComponent();
-
-            //players = new HockeyPlayer[30];
-            //counter = 30;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -19,35 +17,12 @@ namespace Assignment6
             HockeyPlayer player = new HockeyPlayer(txtPlayerName.Text, txtJerseryNo.Text) { GoalsScored = int.TryParse(txtGoals.Text, out int gInt) ? gInt : 0 };
             listBoxPlayers.Items.Add(player);
             CleartTextBoxes();
-
-            //if (counter >= 0)
-            //{
-            //    players[counter - 1] = player;
-            //    counter--;
-
-            //    MessageBox.Show($"{player.Name} added.");
-            //    CleartTextBoxes();
-            //}
         }
 
         private void CleartTextBoxes()
         {
             txtPlayerName.Text = txtJerseryNo.Text = txtGoals.Text = string.Empty;
         }
-
-        //private void btnShowAll_Click(object sender, EventArgs e)
-        //{
-        //    rtxtShowAll.Text = $"{"PLAYER",-40}{"JERSEY #",8}{"GOALS",6}{Environment.NewLine}";
-
-        //    Array.Sort(players);
-        //    foreach (var player in players)
-        //    {
-        //        if (player != null)
-        //        {
-        //            rtxtShowAll.Text += $"{player.Name, -40}{player.JerseyNumber, 8}{player.GoalsScored, 6}{Environment.NewLine}";
-        //        }
-        //    }
-        //}
 
         private void rbtnName_CheckedChanged(object sender, EventArgs e)
         {
@@ -110,7 +85,37 @@ namespace Assignment6
 
         private void loadFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             
+            openFileDialog1.ShowDialog(this);
+            string file = openFileDialog1.FileName;
+
+            using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                listBoxPlayers.Items.Clear();
+                while (fs.Position < fs.Length)
+                {
+                    listBoxPlayers.Items.Add(bf.Deserialize(fs));
+                }
+            }
+        }
+
+        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog(this);
+            string file = saveFileDialog1.FileName;
+            using (FileStream fs = new FileStream(file, FileMode.Create, FileAccess.Write))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                foreach (var item in listBoxPlayers.Items)
+                {
+                    bf.Serialize(fs, item);
+                }
+            }
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
