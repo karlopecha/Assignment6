@@ -195,6 +195,14 @@
             closeToolStripMenuItem.Text = "Close";
             closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileOk += openFileDialog1_FileOk;
+            // 
+            // saveFileDialog1
+            // 
+            saveFileDialog1.FileOk += saveFileDialog1_FileOk;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);

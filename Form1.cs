@@ -60,14 +60,17 @@ namespace Assignment6
 
         private void listBoxPlayers_DoubleClick(object sender, EventArgs e)
         {
-            HockeyPlayer player = (HockeyPlayer)listBoxPlayers.SelectedItem;
+            if (listBoxPlayers.SelectedItem != null)
+            {
+                HockeyPlayer player = (HockeyPlayer)listBoxPlayers.SelectedItem;
 
-            txtPlayerName.Text = player.Name;
-            txtJerseryNo.Text = player.JerseyNumber.ToString();
-            txtGoals.Text = player.GoalsScored.ToString();
+                txtPlayerName.Text = player.Name;
+                txtJerseryNo.Text = player.JerseyNumber.ToString();
+                txtGoals.Text = player.GoalsScored.ToString();
 
-            btnAdd.Enabled = false;
-            btnUpdate.Enabled = true;
+                btnAdd.Enabled = false;
+                btnUpdate.Enabled = true;
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -86,6 +89,20 @@ namespace Assignment6
         private void loadFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog(this);
+        }
+
+        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog(this);
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
             string file = openFileDialog1.FileName;
 
             using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
@@ -99,9 +116,8 @@ namespace Assignment6
             }
         }
 
-        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            saveFileDialog1.ShowDialog(this);
             string file = saveFileDialog1.FileName;
             using (FileStream fs = new FileStream(file, FileMode.Create, FileAccess.Write))
             {
@@ -111,11 +127,6 @@ namespace Assignment6
                     bf.Serialize(fs, item);
                 }
             }
-        }
-
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }
