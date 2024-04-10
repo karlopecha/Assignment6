@@ -3,16 +3,19 @@
     public class HockeyPlayer : IComparable<HockeyPlayer>
     {
         public static string SortBy { get; set; }
+        public static bool IsDesc { get; set; }
 
         public HockeyPlayer(string n, string j)
         {
             Name = n;
-            JerseyNumber = j;
+
+            int.TryParse(j, out int jInt);
+            JerseyNumber = jInt;
         }
 
         public readonly string Name;
-        public string JerseyNumber { get; }
-        public string GoalsScored { get; set; }
+        public int JerseyNumber { get; }
+        public int GoalsScored { get; set; }
 
         public int CompareTo(HockeyPlayer? other)
         {
@@ -26,6 +29,11 @@
                 default:
                     return Name.CompareTo(other.Name);
             }
+        }
+
+        public override string ToString()
+        {
+            return $"{Name,-40}{JerseyNumber,8}{GoalsScored,6}";
         }
     }
 }
