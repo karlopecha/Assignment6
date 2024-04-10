@@ -55,7 +55,7 @@
             txtPlayerName.Name = "txtPlayerName";
             txtPlayerName.PlaceholderText = "Player Name";
             txtPlayerName.Size = new Size(204, 23);
-            txtPlayerName.TabIndex = 1;
+            txtPlayerName.TabIndex = 4;
             // 
             // txtJerseryNo
             // 
@@ -78,7 +78,7 @@
             btnAdd.Location = new Point(405, 37);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(90, 23);
-            btnAdd.TabIndex = 4;
+            btnAdd.TabIndex = 1;
             btnAdd.Text = "Add Player";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;

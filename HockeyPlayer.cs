@@ -3,7 +3,7 @@
     [Serializable]
     public class HockeyPlayer : IComparable<HockeyPlayer>
     {
-        public static string SortBy { get; set; }
+        public static string? SortBy { get; set; }
         public static bool IsDesc { get; set; }
 
         public HockeyPlayer(string n, string j)
